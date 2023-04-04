@@ -1,10 +1,68 @@
 .container {
-  max-width: 600px;
+  max-width: 700px;
   margin-top: 30px;
   border: 1px solid black;
   border-radius: 5px;
 }
 .weather {
   margin-top: 10px;
-  padding: 30px;
+  padding: 50px;
+  text-align: center;
+}
+#location {
+  padding: 50px 10px;
+  margin: 0px;
+}
+h1 {
+  margin-bottom: 0px;
+  padding: 0px;
+}
+h2 {
+  font-size: 64px;
+  margin: 0px;
+  color: brown;
+}
+h3 {
+  font-weight: 500px;
+  font-family: monospace;
+  font-size: 30px;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+li {
+  list-style: none;
+}
+.degreeunit {
+  font-size: 16px;
+  font-weight: 400px;
+  position: relative;
+  top: -30px;
+  color: black;
+}
+.detail {
+  padding: 50px 0px;
+  font: size 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 500px;
+  color: brown;
+}
+#image {
+  width: 100px;
+  height: 90px;
+  padding: 0;
+  margin: 0;
+}
+#description {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+#git {
+  text-align: center;
+  margin: 0 auto;
+  font: size 14px;
+  font-family: "Courier New", Courier, monospace;
 }
