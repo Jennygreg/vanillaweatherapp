@@ -1,14 +1,30 @@
 .container {
+  display: block;
+  margin: 0 auto;
   max-width: 700px;
-  margin-top: 30px;
-  border: 1px solid black;
-  border-radius: 5px;
+  margin-top: 50px;
+
+  padding: 20px 50px;
 }
 .weather {
-  margin-top: 10px;
-  padding: 50px;
+  margin-top: 50px;
+
   text-align: center;
 }
+video {
+  position: absolute;
+  right: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -350px;
+  border-radius: 5px;
+}
+#vid-wrapper {
+  max-width: fit-content;
+  margin-top: -50px;
+  margin-bottom: -50px;
+}
+
 #location {
   padding: 50px 10px;
   margin: 0px;
@@ -61,8 +77,10 @@ li {
   margin: 0;
 }
 #git {
-  text-align: center;
+  display: block;
   margin: 0 auto;
+  text-align: center;
   font: size 14px;
   font-family: "Courier New", Courier, monospace;
+  margin-top: 20px;
 }
