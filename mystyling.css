@@ -1,16 +1,21 @@
+body {
+  background-color: rgb(144, 204, 240);
+  cursor: pointer;
+}
 .container {
   display: block;
   margin: 0 auto;
   max-width: 700px;
   margin-top: 50px;
-
+  max-height: 1000px;
   padding: 20px 50px;
 }
 .weather {
   margin-top: 50px;
-
   text-align: center;
+  padding-right: 50px;
 }
+
 video {
   position: absolute;
   right: 50%;
@@ -18,11 +23,6 @@ video {
   margin-top: -50px;
   margin-left: -350px;
   border-radius: 5px;
-}
-#vid-wrapper {
-  max-width: fit-content;
-  margin-top: -50px;
-  margin-bottom: -50px;
 }
 
 #location {
@@ -58,6 +58,14 @@ li {
   top: -30px;
   color: black;
 }
+#celsuisdeg {
+  text-decoration: none;
+  color: black;
+}
+#fahrenheitdeg {
+  text-decoration: none;
+  color: black;
+}
 .detail {
   padding: 50px 0px;
   font: size 20px;
@@ -82,5 +90,5 @@ li {
   text-align: center;
   font: size 14px;
   font-family: "Courier New", Courier, monospace;
-  margin-top: 20px;
+  margin-top: 10px;
 }
