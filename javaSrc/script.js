@@ -45,7 +45,20 @@ function search(event) {
     let day = days[currentDate.getDay()];
     let month = months[currentDate.getMonth()];
     let year = currentDate.getUTCFullYear();
-    console.log(year);
+    let date = document.querySelector("#date");
+    date.innerHTML = `<strong>${day} ${month}, ${year}</strong>`;
+    let hour = currentDate.getHours();
+
+    if (hour < 10) {
+      hour = `0${hour}`;
+    }
+    let min = currentDate.getMinutes();
+    if (min < 10) {
+      min = `0${min}`;
+    }
+    let time = document.querySelector("#time");
+    time.innerHTML = `Time: <strong>${hour}:${min}</strong>`;
+    console.log(time);
   }
 
   let apikey = "233b3ba66ff9ca173b23ed89a8ba5119";
