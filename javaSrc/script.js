@@ -1,5 +1,4 @@
 function Search(response) {
-  console.log(response);
   let city = document.querySelector("h1");
   city.innerHTML = response.data.name;
   let temperature = document.querySelector(".temp");
