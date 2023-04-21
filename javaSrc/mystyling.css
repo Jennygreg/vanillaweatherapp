@@ -15,7 +15,6 @@ body {
   text-align: center;
   padding-right: 50px;
 }
-
 video {
   position: absolute;
   right: 50%;
@@ -28,6 +27,7 @@ video {
 #location {
   padding: 50px 10px;
   margin: 0px;
+  text-align: left;
 }
 h1 {
   margin-bottom: 0px;
@@ -36,6 +36,7 @@ h1 {
 h2 {
   font-size: 64px;
   margin: 0px;
+  padding: 0;
   color: brown;
 }
 h3 {
@@ -57,6 +58,8 @@ li {
   position: relative;
   top: -30px;
   color: black;
+  margin-left: 0;
+  padding: 0 auto;
 }
 #celsuisdeg {
   text-decoration: none;
@@ -72,6 +75,7 @@ li {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: 500px;
   color: brown;
+  text-align: left;
 }
 #image {
   width: 100px;
@@ -80,7 +84,7 @@ li {
   margin: 0;
 }
 #description {
-  text-align: center;
+  text-align: justify;
   padding: 0;
   margin: 0;
 }

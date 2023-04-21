@@ -11,7 +11,7 @@
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
       crossorigin="anonymous"
     />
-    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="javaSrc/mystyling.css" type="text/css" />
   </head>
   <body>
@@ -23,6 +23,7 @@
             <source src="movie.ogg" type="video/ogg" />
             <source src="movie.webm" type="video/webm" />
           </video>
+
           <form id="search">
             <div class="row">
               <div class="col-9">
@@ -60,16 +61,16 @@
                 </small>
               </h2>
             </div>
-            <div class="col-6">
+            <div class="col-4">
               <ul class="detail">
                 <li>Humidity: <strong id="humidity"></strong></li>
                 <li>Wind: <strong id="wind"></strong></li>
               </ul>
             </div>
-            <div class="col-2">
+            <div class="col-4">
               <h3>Weather</h3>
               <img src="" id="image" />
-              <span id="description">sunny</span>
+              <p id="description">sunny</p>
             </div>
           </div>
         </div>
