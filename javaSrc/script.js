@@ -1,6 +1,7 @@
 function Search(response) {
+  console.log(response);
   let city = document.querySelector("h1");
-  city.innerHTML = search;
+  city.innerHTML = response.data.name;
   let temperature = document.querySelector(".temp");
   temperature.innerHTML = Math.round(response.data.main.temp);
   let humidity = document.querySelector("#humidity");
@@ -12,6 +13,7 @@ function Search(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  image.setAttribute("alt", response.data.weather[0].description);
   let description = document.querySelector("#description");
   description.innerHTML = response.data.weather[0].description;
   let months = [
@@ -55,31 +57,19 @@ function Search(response) {
   let date = document.querySelector("#date");
   date.innerHTML = `${day} ${month}, ${year}`;
 }
-
-let apikey = "233b3ba66ff9ca173b23ed89a8ba5119";
-let search = "Abuja";
-let unit = "metric";
-let url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${apikey}&units=${unit}`;
-axios.get(url).then(Search);
-
-function fahren(event) {
-  event.preventDefault();
-  let fahrenheitdeg = document.querySelector(".temp");
-  let fahrenUnit = (celsuisElement * 9) / 5 + 32;
-  fahrenheitdeg.innerHTML = Math.round(fahrenUnit);
+function searchLocation(location) {
+  let apikey = "233b3ba66ff9ca173b23ed89a8ba5119";
+  let unit = "metric";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apikey}&units=${unit}`;
+  axios.get(url).then(Search);
 }
-function cel(event) {
+
+function searchCity(event) {
   event.preventDefault();
-  let celsuisdeg = document.querySelector(".temp");
-  celsuisdeg.innerHTML = celsuisElement;
+  let city = document.querySelector("#searchCity");
+  searchLocation(city.value);
 }
 let submit = document.querySelector("#search");
-submit.addEventListener("submit", search);
+submit.addEventListener("submit", searchCity);
 
-let celsuisElement = null;
-let celsius = document.querySelector("#celsuisdeg");
-celsius.addEventListener("click", cel);
-let fahrenheit = document.querySelector("fahrenheitdeg");
-fahrenheit.addEventListener("click", fahren);
-
-search(Abuja);
+searchLocation("Abuja");
