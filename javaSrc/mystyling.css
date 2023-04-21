@@ -29,6 +29,20 @@ video {
   margin: 0px;
   text-align: left;
 }
+.submitBtn {
+  width: 70px;
+  padding: 5px;
+  background-color: rgb(26, 163, 218);
+  border-radius: 5px;
+  box-shadow: 2px 1px rgb(193, 216, 230);
+  border: none;
+  color: blanchedalmond;
+}
+.submitBtn:hover {
+  background-color: rgb(193, 216, 230);
+  color: rgb(26, 163, 218);
+  transition: all 200ms ease-in-out;
+}
 h1 {
   margin-bottom: 0px;
   padding: 0px;
