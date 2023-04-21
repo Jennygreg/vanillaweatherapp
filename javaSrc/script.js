@@ -16,6 +16,7 @@ function Search(response) {
   image.setAttribute("alt", response.data.weather[0].description);
   let description = document.querySelector("#description");
   description.innerHTML = response.data.weather[0].description;
+  mycelsuis = response.data.main.temp;
   let months = [
     "Jan",
     "Feb",
@@ -69,6 +70,22 @@ function searchCity(event) {
   let city = document.querySelector("#searchCity");
   searchLocation(city.value);
 }
+function fahrenheitTemp(event) {
+  event.preventDefault();
+  let temperature = document.querySelector(".temp");
+  let fahrenheitdeg = (mycelsuis * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahrenheitdeg);
+}
+function celsuisTemp(event) {
+  event.preventDefault();
+  let temperature = document.querySelector(".temp");
+  temperature.innerHTML = Math.round(mycelsuis);
+}
+let mycelsuis = null;
+let fahrenheit = document.querySelector("#fahrenheitdeg");
+fahrenheit.addEventListener("click", fahrenheitTemp);
+let celsuis = document.querySelector("#celsuisdeg");
+celsuis.addEventListener("click", celsuisTemp);
 let submit = document.querySelector("#search");
 submit.addEventListener("submit", searchCity);
 
