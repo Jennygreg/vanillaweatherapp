@@ -69,11 +69,12 @@ li {
 }
 .degreeunit {
   font-size: 16px;
-  font-weight: 400px;
+  font-weight: bold;
   position: relative;
   top: -30px;
   color: black;
-  margin-left: 0;
+  margin-left: -15px;
+
   padding: 0 auto;
 }
 #celsuisdeg {
