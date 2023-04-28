@@ -46,9 +46,10 @@ video {
 h1 {
   margin-bottom: 0px;
   padding: 0px;
+  font-size: 30px;
 }
 h2 {
-  font-size: 64px;
+  font-size: 40px;
   margin: 0px;
   padding: 0;
   color: brown;
