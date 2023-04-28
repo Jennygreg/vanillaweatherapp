@@ -45,6 +45,7 @@ function Search(response) {
   let month = months[currentDate.getMonth()];
   let year = currentDate.getUTCFullYear();
   let hour = currentDate.getHours();
+  let dates = currentDate.getDate();
   if (hour < 10) {
     hour = `0${hour}`;
   }
@@ -55,7 +56,7 @@ function Search(response) {
   let time = document.querySelector("#time");
   time.innerHTML = ` Last updated ${hour}:${min}`;
   let date = document.querySelector("#date");
-  date.innerHTML = `${day} ${month}, ${year}`;
+  date.innerHTML = `${day} ${dates} ${month}, ${year}`;
 }
 function searchLocation(location) {
   let apikey = "233b3ba66ff9ca173b23ed89a8ba5119";
