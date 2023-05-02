@@ -61,27 +61,29 @@ function Search(response) {
   getResponse(response.data.coord);
 }
 function getResponse(coordinates) {
-  let Apikey = "233b3ba66ff9ca173b23ed89a8ba5119";
+  let Apikey = "tfo4bbbcafc5703e8a031a2da3b01a3a";
   let unit = "metric";
-  let apiurl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${Apikey}&units=${unit}`;
+  let apiurl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&key=${Apikey}&units=${unit}`;
   axios.get(apiurl).then(dailyForeCast);
 }
 function dailyForeCast(response) {
+  console.log(response.data.daily);
   let forecast = document.querySelector("#weatherCast");
   forecastElement = `<div class="row" >`;
-  let days = ["Wed", "Thur", "Fri", "Sat", "Sun", "Mon"];
-  days.forEach(function (day) {
+  let dailyForecast = response.data.daily;
+
+  dailyForecast.forEach(function (dailyForecastDay) {
     forecastElement =
       forecastElement +
       `<div class="col-2" >
-              <div id="forecastDay">${day}</div>
+              <div id="forecastDay">${dailyForecastDay.temperature.time}</div>
               <img
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${dailyForecastDay.condition.icon}.png"
                 id="icon"
-                alt=""
+                alt= ${dailyForecastDay.condition.description};
               />
               <div class="forecastMax"
-                >23°  <span class="forecastMin">  18°</span></div
+                >${dailyForecastDay.temperature.maximum}°  <span class="forecastMin">  ${dailyForecastDay.temperature.minimum}°</span></div
               >
           </div>`;
   });
@@ -119,5 +121,5 @@ let celsuis = document.querySelector("#celsuisdeg");
 celsuis.addEventListener("click", celsuisTemp);
 let submit = document.querySelector("#search");
 submit.addEventListener("submit", searchCity);
-dailyForeCast();
+
 searchLocation("Abuja");
