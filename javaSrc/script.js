@@ -58,6 +58,29 @@ function Search(response) {
   let date = document.querySelector("#date");
   date.innerHTML = `${day} ${dates} ${month}, ${year}`;
 }
+function dailyForeCast() {
+  let forecast = document.querySelector("#weatherCast");
+  forecastElement = `<div class="row" >`;
+  let days = ["Wed", "Thurs", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastElement =
+      forecastElement +
+      `<div class="col-2" id= "column">
+              <div id="forecastDay">${day}</div>
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                id="icon"
+                alt=""
+              />
+              <div class="forecastMax"
+                >23°  <span class="forecastMin">  18°</span></div
+              >
+          </div>`;
+  });
+  forecastElement = forecastElement + `</div>`;
+  forecast.innerHTML = forecastElement;
+}
+
 function searchLocation(location) {
   let apikey = "233b3ba66ff9ca173b23ed89a8ba5119";
   let unit = "metric";
@@ -88,5 +111,5 @@ let celsuis = document.querySelector("#celsuisdeg");
 celsuis.addEventListener("click", celsuisTemp);
 let submit = document.querySelector("#search");
 submit.addEventListener("submit", searchCity);
-
+dailyForeCast();
 searchLocation("Abuja");

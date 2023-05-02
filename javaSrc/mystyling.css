@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(144, 204, 240);
+  background-color: whitesmoke;
   cursor: pointer;
 }
 .container {
@@ -7,12 +7,13 @@ body {
   margin: 0 auto;
   max-width: 800px;
   margin-top: 50px;
-  padding: 20px 50px;
+  padding: 20px;
 }
 .weather {
   margin-top: 50px;
   text-align: center;
-  padding-right: 50px;
+  padding: 0px;
+  padding-left: 0;
 }
 
 video {
@@ -20,7 +21,7 @@ video {
   right: 50%;
   left: 50%;
   margin-top: -30px;
-  margin-left: -430px;
+  margin-left: -405px;
   border-radius: 5px;
   width: 800px;
 }
@@ -107,6 +108,21 @@ li {
   text-align: center;
   padding: 0;
   margin: 0;
+}
+#weatherCast {
+  text-align: center;
+  padding: 0px;
+  margin-top: 0px;
+}
+
+#icon {
+  width: 50px;
+  padding: 0px;
+  margin: 0px;
+}
+#forecastDay {
+  margin: 0px;
+  padding: 0px;
 }
 #git {
   display: block;
