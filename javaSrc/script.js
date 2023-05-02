@@ -57,15 +57,23 @@ function Search(response) {
   time.innerHTML = ` Last updated ${hour}:${min}`;
   let date = document.querySelector("#date");
   date.innerHTML = `${day} ${dates} ${month}, ${year}`;
+
+  getResponse(response.data.coord);
 }
-function dailyForeCast() {
+function getResponse(coordinates) {
+  let Apikey = "233b3ba66ff9ca173b23ed89a8ba5119";
+  let unit = "metric";
+  let apiurl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${Apikey}&units=${unit}`;
+  axios.get(apiurl).then(dailyForeCast);
+}
+function dailyForeCast(response) {
   let forecast = document.querySelector("#weatherCast");
   forecastElement = `<div class="row" >`;
-  let days = ["Wed", "Thurs", "Fri", "Sat", "Sun", "Mon"];
+  let days = ["Wed", "Thur", "Fri", "Sat", "Sun", "Mon"];
   days.forEach(function (day) {
     forecastElement =
       forecastElement +
-      `<div class="col-2" id= "column">
+      `<div class="col-2" >
               <div id="forecastDay">${day}</div>
               <img
                 src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
