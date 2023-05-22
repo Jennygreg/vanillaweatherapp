@@ -93,7 +93,7 @@ function dailyForeCast(response) {
               <div class="forecastMax"
                 >${Math.round(
                   dailyForecastDay.temperature.maximum
-                )}°  <span class="forecastMin">  ${Math.round(
+                )}° / <span class="forecastMin">  ${Math.round(
           dailyForecastDay.temperature.minimum
         )}°</span></div
               >
