@@ -73,7 +73,6 @@ function getDay(timestamp) {
   return days[day];
 }
 function dailyForeCast(response) {
-  console.log(response.data.daily);
   let forecast = document.querySelector("#weatherCast");
   forecastElement = `<div class="row" >`;
   let dailyForecast = response.data.daily;
