@@ -78,12 +78,18 @@ function dailyForeCast(response) {
       `<div class="col-2" >
               <div id="forecastDay">${dailyForecastDay.temperature.time}</div>
               <img
-                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${dailyForecastDay.condition.icon}.png"
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                  dailyForecastDay.condition.icon
+                }.png"
                 id="icon"
                 alt= ${dailyForecastDay.condition.description};
               />
               <div class="forecastMax"
-                >${dailyForecastDay.temperature.maximum}°  <span class="forecastMin">  ${dailyForecastDay.temperature.minimum}°</span></div
+                >${Math.round(
+                  dailyForecastDay.temperature.maximum
+                )}°  <span class="forecastMin">  ${Math.round(
+        dailyForecastDay.temperature.minimum
+      )}°</span></div
               >
           </div>`;
   });
