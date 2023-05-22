@@ -78,10 +78,11 @@ function dailyForeCast(response) {
   forecastElement = `<div class="row" >`;
   let dailyForecast = response.data.daily;
 
-  dailyForecast.forEach(function (dailyForecastDay) {
-    forecastElement =
-      forecastElement +
-      `<div class="col-2" >
+  dailyForecast.forEach(function (dailyForecastDay, index) {
+    if (index > 0) {
+      forecastElement =
+        forecastElement +
+        `<div class="col-2" >
               <div id="forecastDay">${getDay(dailyForecastDay.time)}</div>
               <img
                 src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
@@ -94,10 +95,11 @@ function dailyForeCast(response) {
                 >${Math.round(
                   dailyForecastDay.temperature.maximum
                 )}°  <span class="forecastMin">  ${Math.round(
-        dailyForecastDay.temperature.minimum
-      )}°</span></div
+          dailyForecastDay.temperature.minimum
+        )}°</span></div
               >
           </div>`;
+    }
   });
   forecastElement = forecastElement + `</div>`;
   forecast.innerHTML = forecastElement;
