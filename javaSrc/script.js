@@ -66,6 +66,12 @@ function getResponse(coordinates) {
   let apiurl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&key=${Apikey}&units=${unit}`;
   axios.get(apiurl).then(dailyForeCast);
 }
+function getDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+  return days[day];
+}
 function dailyForeCast(response) {
   console.log(response.data.daily);
   let forecast = document.querySelector("#weatherCast");
@@ -76,7 +82,7 @@ function dailyForeCast(response) {
     forecastElement =
       forecastElement +
       `<div class="col-2" >
-              <div id="forecastDay">${dailyForecastDay.temperature.time}</div>
+              <div id="forecastDay">${getDay(dailyForecastDay.time)}</div>
               <img
                 src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
                   dailyForecastDay.condition.icon
